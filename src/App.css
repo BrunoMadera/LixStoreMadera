@@ -1,38 +1,103 @@
 .App {
   text-align: center;
+  font-family: 'Roboto';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* egyptian backGround */
+div{
+  background-color: #1034A6;   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.link:link, .link:visited {
+  
+  text-decoration: none;
   color: white;
+  margin-left: 20px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.link:link, .link:visited {
+  text-decoration: none;
+    color: white;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.link:hover, .link:active {
+  color: #C454EB;
+  text-decoration: none;
+}
+
+.h7{
+
+  font-weight:300 ;
+  font-size:large;
+  text-decoration: underline;
+  margin: 0 25px 0 50px;
+  font-style: italic;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.h8{
+
+font-weight: 100 ;
+font-size: smaller;
+margin: 0 25px 0 50px;
+}
+
+.h9{
+margin: 0;
+font-size: large; 
+font-weight:500;
+text-align: center;
+}
+
+.h10{
+margin: 0 0 15px 0;
+text-align: center;
+}
+
+.h11{
+font-size:30px;
+margin: 0 0 0 0;
+text-align: right;
+font-style: italic;
+background-color: rgba(255,2255,255,0.5);
+}
+
+.h12{
+font-size:25px;
+margin: 0 0 0 0;
+text-align: center;
+
+}
+
+.hrBrown{
+
+  color: brown;
+  border: dotted 1px;
+}
+
+.hrGray{
+
+  color: gray;
+  border: solid 5px;
+
+}
+
+.hrWhite{
+
+  color: whitesmoke;
+  border: solid 2px;
+}
+
+.boxCounter{
+
+ max-width: 100%;
+
+}
+
+.txtCounter{
+
+text-align: center;
+font-style: italic;
+
 }
