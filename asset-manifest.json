@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/LixStoreMadera/static/css/main.85d9219b.css",
+    "main.js": "/LixStoreMadera/static/js/main.2e63a6b3.js",
+    "static/js/787.0912bea1.chunk.js": "/LixStoreMadera/static/js/787.0912bea1.chunk.js",
+    "static/media/produto5.jpg": "/LixStoreMadera/static/media/produto5.300d90d89972cbb84ee4.jpg",
+    "static/media/produto1.jpg": "/LixStoreMadera/static/media/produto1.ecc79163c41aa349c7f0.jpg",
+    "static/media/produto2.jpg": "/LixStoreMadera/static/media/produto2.61a8fb4e24a172fbf527.jpg",
+    "static/media/produto4.jpg": "/LixStoreMadera/static/media/produto4.4e276caa04d7a2c13dcb.jpg",
+    "static/media/produto6.jpg": "/LixStoreMadera/static/media/produto6.88ad77df71eb1961cc97.jpg",
+    "static/media/produto3.jpg": "/LixStoreMadera/static/media/produto3.4091a4fce3fb90b10d9e.jpg",
+    "static/media/lixStoreR.png": "/LixStoreMadera/static/media/lixStoreR.990cf32352936b3297a9.png",
+    "index.html": "/LixStoreMadera/index.html",
+    "main.85d9219b.css.map": "/LixStoreMadera/static/css/main.85d9219b.css.map",
+    "main.2e63a6b3.js.map": "/LixStoreMadera/static/js/main.2e63a6b3.js.map",
+    "787.0912bea1.chunk.js.map": "/LixStoreMadera/static/js/787.0912bea1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85d9219b.css",
+    "static/js/main.2e63a6b3.js"
+  ]
+}
