@@ -15,8 +15,8 @@ let logoLix = require('./lixStoreR.png');
 
 
 
-
 export default function NavBar() {
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -105,7 +105,9 @@ export default function NavBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'inline'} }}
           >
-            <p className='h8'>Roupas</p>
+            <p className='h8'>
+            <Link to="/category/roupas" className='link h10'>Roupas</Link>
+            </p>
 
           </Typography>
 
@@ -115,8 +117,9 @@ export default function NavBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'inline'} }}
           >
-            <p className='h8'>Acessórios</p>
-
+            <p className='h8'>
+            <Link to="/category/acessorios" className='link h10'>Acessórios</Link>
+            </p>
           </Typography>
 
           <Typography
@@ -152,5 +155,7 @@ export default function NavBar() {
       {renderMobileMenu}
       {renderMenu}
     </Box>
+
+    
   );
 }

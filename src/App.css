@@ -91,13 +91,19 @@ text-align: center;
 
 .boxCounter{
 
- max-width: 100%;
+border: solid 1px red;
 
 }
 
 .txtCounter{
-
-text-align: center;
-font-style: italic;
+  display: inline-block;
+  height: 40px;
+  background-color: rgb(255,255,255,0.4);
+  color: white;
+  width: 120px;
+  text-align: center;
+  font-style: italic;
+  border: solid 1px red;
 
 }
+

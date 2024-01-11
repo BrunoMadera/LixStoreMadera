@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
             setDetail(Produtos.filter((item) => {
                 return item.id === id
             }))
-        }, 1000)
+        }, 500)
 
         return () => {
             clearTimeout(delay)

@@ -2,7 +2,8 @@ const Cart = () => {
 
     return (
         <>
-<h1>Carrinho</h1>
+<div className = "h12" id="cart" style={{marginTop:"120px", color: "white"}}>Carrinho</div>
+
         </>
     )
 }

@@ -2,10 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import ItemCount from "../ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/cartContext";
+
+
 import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Typography } from "@mui/material";
+
 
 
 
@@ -37,8 +40,8 @@ const ItemDetail = ({ item }) => {
     }
 
     function onAdd() {
-        const carrinho = document.getElementById("cart");
-        carrinho.innerHTML = parseInt(carrinho.innerText) + count;
+        // const carrinho = document.getElementById("cart");
+        // carrinho.innerHTML = parseInt(carrinho.innerText) + count;
         setCurrentStock(currentStock - count);
         setCount(0);
         cart.addToCart(item, count)
@@ -46,6 +49,7 @@ const ItemDetail = ({ item }) => {
 
     return (
         <>
+        
             <div className="card mb-3" style={{maxWidth: '90%', margin: '80px 25px 25px 50px'}}>
                 <div className="row g-0" style={{margin: '0'}}>
                     <div className="col-md-4">
@@ -60,21 +64,21 @@ const ItemDetail = ({ item }) => {
                                     <hr className="hrWhite"/>
                                 <p className="card-text h12">Apenas R$ {price}</p>
                                     <hr className="hrBrown"/>
-                                <p className="card-text h12">Temos {currentStock} unidades disponíveis para você!</p>
+                                <span className="card-text h12">Temos {currentStock} unidades disponíveis para você!</span>
                                     <hr className="hrGray"/>
-                                <div>
-                                    <Stack direction="row" spacing={1}> 
+                                <div className="position">
+                                    <Stack direction="row" spacing={15}> 
                                         <Button variant="text" style={{margin:'18px 0 0 0 '}}>        
                                             <ItemCount style={{width:'15px'}} stock={currentStock} count={count} removeItem={removeItem} addItem={addItem} onAdd={onAdd}  />
                                         </Button>
                                     <Button style={{backgroundColor:'gold', color:'black', borderRadius: '60px'}}variant="contained" id="addToCart" onClick={onAdd} disabled={count === 0 ? true : false}> 
-                                        <AddShoppingCartSharpIcon style={{height:'60px'}} />
+                                        Reservar<AddShoppingCartSharpIcon style={{height:'60px'}} />
                                     </Button>
-                                        <Typography>
-                                            <Link to="/cart">
-                                            Finalizar
+                                        <Typography >
+                                            <Link to="/cart" className=" h12 link">
+                                            Visualizar o Carrinho
                                             </Link>
-                                        </Typography>
+                                         </Typography>
                                     </Stack>
                                 </div>
                             </div>

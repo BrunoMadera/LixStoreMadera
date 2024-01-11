@@ -10,10 +10,12 @@ const Item = ({ item }) => {
     const imgUrl = item.imgUrl;
     const stock = parseInt(item.stock);
 
+
     return (
         <>
 
-        <div className="card" style={{width: '350px', margin:'50px 0 0 0', padding: '15px', color: 'white'}}>
+        <div className="card" style={{width: '350px', margin:'50px 0 0 0', padding: '5px', color: 'white'}}>
+        <hr />
         <img src={imgUrl} className="card-img-top" alt="produtos" />
         <hr />
               <Link to={`/item/${item.id}`} >
@@ -24,9 +26,9 @@ const Item = ({ item }) => {
         <p className="card-text h9">Preço: R$ {price}</p>
         <hr />
         <blockquote style={{fontStyle:'italic',  margin:'0', textAlign: 'right', color: 'white'}}className="blockquote-footer" >em estoque:  {stock} </blockquote >
-        <hr />
+        {/* <hr /> */}
 
-        <ItemCount />
+        {/* <ItemCount /> */}
 
 
         </div>

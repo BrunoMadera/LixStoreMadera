@@ -17,7 +17,7 @@ const ItemList = () => {
                 return item.category === category
             }) : Produtos)
       
-          }, 2000)
+          }, 500)
       
           return () => {
       
