@@ -35,16 +35,19 @@ const ItemDetail = ({ item }) => {
 
     function addItem() {
         if (count < currentStock) {
-            return setCount(count + 1)
-        } 
+            return (
+            setCount(count + 1)
+        )} 
     }
 
     function onAdd() {
-        // const carrinho = document.getElementById("cart");
-        // carrinho.innerHTML = parseInt(carrinho.innerText) + count;
         setCurrentStock(currentStock - count);
         setCount(0);
         cart.addToCart(item, count)
+        console.log(cart);
+
+            return cart.length;
+
     }
 
     return (
@@ -69,10 +72,10 @@ const ItemDetail = ({ item }) => {
                                 <div className="position">
                                     <Stack direction="row" spacing={15}> 
                                         <Button variant="text" style={{margin:'18px 0 0 0 '}}>        
-                                            <ItemCount style={{width:'15px'}} stock={currentStock} count={count} removeItem={removeItem} addItem={addItem} onAdd={onAdd}  />
+                                            <ItemCount style={{width:'15px'}} stock={currentStock} count={count} removeItem={removeItem} addItem={addItem} onAdd={onAdd} />
                                         </Button>
                                     <Button style={{backgroundColor:'gold', color:'black', borderRadius: '60px'}}variant="contained" id="addToCart" onClick={onAdd} disabled={count === 0 ? true : false}> 
-                                        Reservar<AddShoppingCartSharpIcon style={{height:'60px'}} />
+                                        Incluir <AddShoppingCartSharpIcon style={{height:'60px'}} />
                                     </Button>
                                         <Typography >
                                             <Link to="/cart" className=" h12 link">

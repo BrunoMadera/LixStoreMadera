@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount";
 import LoupeSharpIcon from '@mui/icons-material/LoupeSharp';
 
 

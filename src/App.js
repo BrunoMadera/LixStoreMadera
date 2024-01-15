@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { CartContextProvider } from './contexts/cartContext';
-import { Produtos } from './produtos';
+
 
 export default function App() {
 

@@ -15,7 +15,7 @@ const ItemCount = (props) => {
                         
                         <button className="btn btn-light" style={{ width: "100px" }}> 
                             {stock === 0 ? 
-                                <span className="badge bg-danger p-2">ESGOTADO</span> 
+                                <span className="badge bg-danger p-2">Esgotado :(</span> 
                             : count}
                         </button>
 
