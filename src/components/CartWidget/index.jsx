@@ -1,23 +1,31 @@
-import * as React from 'react';
+import * as React  from 'react';
+
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { CartContextProvider } from '../../contexts/cartContext';
-import cart from '../ItemDetail'
+
+import { CartContext } from "../../contexts/CartContext";
+import { useContext } from 'react';
+    
+
     
 function CartWidget() {
-        return (
-<CartContextProvider>
 
+const cartContext = useContext(CartContext)
+
+        return (
+
+        
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
         <IconButton size="large" aria-label="show cart" color="inherit">
-            <Badge badgeContent={cart.length} color="error"> 
+            <Badge badgeContent={cartContext.cartAdded.length} color="error"> 
             <ShoppingCartIcon />  
             </Badge>
         </IconButton>
         </Box> 
- </CartContextProvider>
+
+
    );
 }
  

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import ItemCount from "../ItemCount";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../contexts/cartContext";
+import { CartContext } from "../../contexts/CartContext";
 
 
 import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
@@ -9,11 +9,15 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Typography } from "@mui/material";
 
+import Cart from "../Cart";
+
+import toggleDrawer from "../Cart"
+
 
 
 
 const ItemDetail = ({ item }) => {
-    const cart = useContext(CartContext);
+    const cartAdded = useContext(CartContext);
     const name = item.name;
     const description = item.description;
     const price = parseFloat(item.price).toFixed(2);
@@ -24,8 +28,8 @@ const ItemDetail = ({ item }) => {
     const [currentStock, setCurrentStock] = useState(stock);
 
     useEffect(() => {
-        console.log(cart.cart)
-    },[cart])
+        console.log(cartAdded.cart)
+    },[cartAdded])
 
     function removeItem() {
         if (count >= initial) {
@@ -43,10 +47,7 @@ const ItemDetail = ({ item }) => {
     function onAdd() {
         setCurrentStock(currentStock - count);
         setCount(0);
-        cart.addToCart(item, count)
-        console.log(cart);
-
-            return cart.length;
+        cartAdded.addToCart(item, count)
 
     }
 
@@ -78,9 +79,7 @@ const ItemDetail = ({ item }) => {
                                         Incluir <AddShoppingCartSharpIcon style={{height:'60px'}} />
                                     </Button>
                                         <Typography >
-                                            <Link to="/cart" className=" h12 link">
-                                            Visualizar o Carrinho
-                                            </Link>
+<Cart />
                                          </Typography>
                                     </Stack>
                                 </div>

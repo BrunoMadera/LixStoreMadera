@@ -11,7 +11,7 @@ const ItemCount = (props) => {
         <div>
         
                 <div className="btn-group" role="group" aria-label="Basic example">
-                <button type="button" className="btn btn-danger"id="remove" onClick={props.removeItem} disabled={count === 0 ? true : false}>-</button>
+                <button type="button" className="btn btn-danger" id="remove" onClick={props.removeItem} disabled={count === 0 ? true : false}>-</button>
                         
                         <button className="btn btn-light" style={{ width: "100px" }}> 
                             {stock === 0 ? 
@@ -19,7 +19,7 @@ const ItemCount = (props) => {
                             : count}
                         </button>
 
-                <button type="button" className="btn btn-success"id="add" onClick={props.addItem} disabled={stock === 0 ? true : false}>+</button>
+                <button type="button" className="btn btn-success" id="add" onClick={props.addItem} disabled={stock === 0 ? true : false}>+</button>
                 </div>
 
         
