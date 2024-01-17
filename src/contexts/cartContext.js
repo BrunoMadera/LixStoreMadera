@@ -9,19 +9,25 @@ export function CartContextProvider({ children }) {
        const [cartAdded, setCartAdded] = useState([]);
         
        function addToCart(item){
-
         const itemsAdded = {...item};
 
         setCartAdded([...cartAdded, itemsAdded]);
         
-        console.log("items do carrinho ↓↓↓ ");
+        console.log("items no carrinho ↓↓↓ ");
         console.log(cartAdded);
        }
 
-    
+        function clearCart(){
+        setCartAdded([]);
+       
+       }
+
+
+
+   
     return (
 
-        <CartContext.Provider value={{ cartAdded, addToCart }}>
+        <CartContext.Provider value={{ cartAdded, addToCart, clearCart}}>
             {children}
         </CartContext.Provider>
 

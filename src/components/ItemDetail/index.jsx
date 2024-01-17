@@ -1,17 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import ItemCount from "../ItemCount";
-import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 
 
 import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import { Typography } from "@mui/material";
 
 import Cart from "../Cart";
 
-import toggleDrawer from "../Cart"
 
 
 
@@ -47,9 +44,8 @@ const ItemDetail = ({ item }) => {
     function onAdd() {
         setCurrentStock(currentStock - count);
         setCount(0);
-        cartAdded.addToCart(item, count)
-
-    }
+        cartAdded.addToCart(item, count);
+            }
 
     return (
         <>
@@ -63,26 +59,28 @@ const ItemDetail = ({ item }) => {
                         <div className="card-body">
                             <h5 className="card-title h1" >{name}</h5>
                             <hr className="hrWhite"/>
-                            <div style={{color:'white'}}>
+                            <div style={{color:'white', textAlign:'center', fontStyle:'italic'}}>
                                 <p className="card-text h11"style={{color:'black'}}>{description}</p>
                                     <hr className="hrWhite"/>
                                 <p className="card-text h12">Apenas R$ {price}</p>
                                     <hr className="hrBrown"/>
-                                <span className="card-text h12">Temos {currentStock} unidades disponíveis para você!</span>
+                                <span className="card-text h12" style={{textAlign:'center'}}>Temos {currentStock} unidades disponíveis para você!</span>
                                     <hr className="hrGray"/>
-                                <div className="position">
-                                    <Stack direction="row" spacing={15}> 
-                                        <Button variant="text" style={{margin:'18px 0 0 0 '}}>        
+
+                                <div className="ContA">
+                                         <Button className="ItemA" variant="text">        
                                             <ItemCount style={{width:'15px'}} stock={currentStock} count={count} removeItem={removeItem} addItem={addItem} onAdd={onAdd} />
                                         </Button>
-                                    <Button style={{backgroundColor:'gold', color:'black', borderRadius: '60px'}}variant="contained" id="addToCart" onClick={onAdd} disabled={count === 0 ? true : false}> 
-                                        Incluir <AddShoppingCartSharpIcon style={{height:'60px'}} />
-                                    </Button>
+                                    <div className="ItemA addToCartIcon ">
+                                        <Button variant="contained" color="warning" id="addToCart"  disabled={stock === 0 ? true : false} onClick={onAdd}> 
+                                            Adicionar ao Carrinho <AddShoppingCartSharpIcon  />
+                                        </Button>
+                                    </div>
                                         <Typography >
-<Cart />
+                                            <Cart className="ItemA" />
                                          </Typography>
-                                    </Stack>
                                 </div>
+
                             </div>
                             </div>
                         </div>

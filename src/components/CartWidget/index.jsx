@@ -7,6 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import { CartContext } from "../../contexts/CartContext";
 import { useContext } from 'react';
+
     
 
     
@@ -18,7 +19,7 @@ const cartContext = useContext(CartContext)
 
         
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-        <IconButton size="large" aria-label="show cart" color="inherit">
+        <IconButton  aria-label="show cart" color="inherit" >
             <Badge badgeContent={cartContext.cartAdded.length} color="error"> 
             <ShoppingCartIcon />  
             </Badge>

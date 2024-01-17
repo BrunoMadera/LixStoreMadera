@@ -5,7 +5,7 @@
 
 /* egyptian backGround */
 div{
-  background-color: #1034A6;   
+  background-color: rgb(16, 52, 166);   
 }
 
 .link:link, .link:visited {
@@ -70,6 +70,15 @@ text-align: center;
 
 }
 
+.h13{
+
+font-weight: 200 ;
+font-size: 20px;
+margin: auto;
+font-style: oblique;
+}
+
+
 .hrBrown{
 
   color: brown;
@@ -82,6 +91,14 @@ text-align: center;
   border: solid 5px;
 
 }
+
+.hrPink{
+
+  color: #F5A1E8;
+  border: solid 5px;
+
+}
+
 
 .hrWhite{
 
@@ -105,5 +122,57 @@ border: solid 1px red;
   font-style: italic;
   border: solid 1px red;
 
+}
+
+.titleCartItems{
+
+position:absolute; 
+ left:20px;
+ top: 85px;
+ width: 100%;
+ height: 50px;
+
+}
+
+
+.cartItemsRemove {
+
+ cursor:pointer;
+ position:relative; 
+ left:-100px;
+ width: 45px;
+ height: 35px;
+ border-radius: 15px;
+ background: black;
+ color: white;
+
+}
+
+.cartItemsRemove:hover{
+
+  background-color: pink;
+}
+
+.addToCartIcon{
+
+ 
+}
+
+.ContA{
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  gap: 30px;
+
+
+}
+
+.ItemA{
+
+  display: flex;
+  justify-items: baseline;
+  height: 35px;
+  flex-grow: 4;
 }
 

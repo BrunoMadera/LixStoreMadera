@@ -25,10 +25,6 @@ const Item = ({ item }) => {
         <p className="card-text h9">Preço: R$ {price}</p>
         <hr />
         <blockquote style={{fontStyle:'italic',  margin:'0', textAlign: 'right', color: 'white'}}className="blockquote-footer" >em estoque:  {stock} </blockquote >
-        {/* <hr /> */}
-
-        {/* <ItemCount /> */}
-
 
         </div>
         </div>
