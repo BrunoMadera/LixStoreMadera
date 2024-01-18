@@ -7,9 +7,10 @@ import { CartContext } from "../../contexts/CartContext";
 import { useContext } from 'react';
 
 import { MdRemoveShoppingCart } from "react-icons/md";
+import CartWidget from '../CartWidget';
+import { Link } from "react-router-dom";
 
-
-
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 
 
@@ -20,7 +21,6 @@ function Cart() {
 
   const carr = cartContext.cartAdded;
 
-
   const cartItems =()=>{
               return (
                 
@@ -28,12 +28,12 @@ function Cart() {
                     {carr.map((carr, index) => { 
                       return (
                         <div key={index} style={{backgroundColor:'white'}} className="h13" >
-                          <p style={{fontWeight:'bold'}}>{carr.name} <span style={{fontWeight:'normal'}} > | R$ {carr.price}</span></p>
+                          <p style={{fontWeight:'bold'}}>{carr.name} 
+                            <span style={{fontWeight:'normal'}} > x {(carr.count)}</span>
+                            <span style={{fontWeight:'normal'}} > = R$ {parseFloat(carr.price * carr.count).toFixed(2)}</span>
+                          </p>
                           <hr className="hrBrown" />
-                          <p>Quantidade: {1}</p>
-                          <hr className="hrGray" />
                         </div>
-
                       );
                     })}
 
@@ -48,11 +48,9 @@ function sumPrice (){
         
         for(var i = 0; i <cartContext.cartAdded.length; i++) { 
               
-              sumPrice= cartContext.cartAdded[i].price + sumPrice; 
+              sumPrice= cartContext.cartAdded[i].price * cartContext.cartAdded[i].count+ sumPrice; 
         } 
-
-        return parseInt(sumPrice);
-        
+        return parseFloat(sumPrice).toFixed(2);
       }
 
  
@@ -63,8 +61,8 @@ function sumPrice (){
 
   return (
     <>
-      <Button variant="contained" color="success" onClick={handleShow} disabled={cartContext.cartAdded.length === 0 ? true : false}>
-        Ver Carrinho
+      <Button onClick={handleShow}>
+        <CartWidget/>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} placement='end' >
@@ -73,49 +71,23 @@ function sumPrice (){
         </Offcanvas.Header>
         <Offcanvas.Body style={{backgroundColor:'white'}}>
         <p className="h11 titleCartItems" style={{textAlign:'end', background:"rgba(16, 52, 166, 0.5)"}} >
-        <MdRemoveShoppingCart onClick={cartContext.clearCart} className="cartItemsRemove" />
+        <MdRemoveShoppingCart onClick={cartContext.clearCart, handleClose} className="cartItemsRemove" />
             Items no carrinho...</p>
             <hr className="hrPink" style={{marginTop:'75px'}}/>
               {cartItems()}      
             <hr className="hrPink"/>
-            <p className="h11"> Total do Carrinho R$ {sumPrice()} </p>
+            <p className="h11 sumTitle"> 
+                {cartContext.cartAdded.length === 0 ? 
+                    <span>Carrinho Vazio.. <br/> Continue comprando :D </span> 
+                  : <span className="totalCart"> Total do Carrinho R$ {sumPrice()} </span>}
+            <Link to="/CheckOut"><Button variant="outlined" color="success" className="checkoutButton" endIcon={<ShoppingCartCheckoutIcon />} onClick={handleClose} > Ir para CheckOut </Button> </Link>
+            </p>
 
-        </Offcanvas.Body>
+
+           </Offcanvas.Body>
       </Offcanvas>
     </>
   );
 }
 
 export default Cart;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { Link } from "react-router-dom";
-
-
-// const Cart = () => {
-
-//     return (
-//         <>
-
-//         <Link to="/cart">
-// <div className = "h12" id="cart" style={{marginTop:"120px", color: "white"}}>Carrinho</div>
-//         </Link>
-
-//         </>
-//     )
-// }
-
-// export default Cart;

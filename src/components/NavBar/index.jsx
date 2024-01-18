@@ -7,8 +7,8 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import CartWidget from '../CartWidget';
 import { Link } from "react-router-dom";
+import Cart from '../Cart';
 
 
 let logoLix = require('./lixStoreR.png');
@@ -76,7 +76,7 @@ export default function NavBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem Link to="/"><p>Home</p></MenuItem>
-      <MenuItem><p>Carrinho</p></MenuItem>
+      <MenuItem><p><Cart/></p></MenuItem>
       <MenuItem><p>Roupas</p></MenuItem>
       <MenuItem><p>Acessórios</p></MenuItem>
 
@@ -88,7 +88,7 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="fixed">
         <Toolbar>
-                  <img src={logoLix} style={{width: "180px"}} alt='LixStore'/>
+           <Link to="/"><img src={logoLix} style={{width: "180px"}} alt='LixStore'/></Link> 
           <Typography
             variant="h5"
             noWrap
@@ -135,9 +135,7 @@ export default function NavBar() {
 
 
           <Box sx={{ flexGrow: 1}} />
-
-          <CartWidget />
-          
+            <Cart />
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -155,7 +153,6 @@ export default function NavBar() {
       {renderMobileMenu}
       {renderMenu}
     </Box>
-
     
   );
 }

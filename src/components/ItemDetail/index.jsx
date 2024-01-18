@@ -5,9 +5,6 @@ import { CartContext } from "../../contexts/CartContext";
 
 import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 import Button from '@mui/material/Button';
-import { Typography } from "@mui/material";
-
-import Cart from "../Cart";
 
 
 
@@ -25,7 +22,7 @@ const ItemDetail = ({ item }) => {
     const [currentStock, setCurrentStock] = useState(stock);
 
     useEffect(() => {
-        console.log(cartAdded.cart)
+        
     },[cartAdded])
 
     function removeItem() {
@@ -45,6 +42,8 @@ const ItemDetail = ({ item }) => {
         setCurrentStock(currentStock - count);
         setCount(0);
         cartAdded.addToCart(item, count);
+        const addedQty = count;
+        return ([addedQty]);
             }
 
     return (
@@ -72,13 +71,11 @@ const ItemDetail = ({ item }) => {
                                             <ItemCount style={{width:'15px'}} stock={currentStock} count={count} removeItem={removeItem} addItem={addItem} onAdd={onAdd} />
                                         </Button>
                                     <div className="ItemA addToCartIcon ">
-                                        <Button variant="contained" color="warning" id="addToCart"  disabled={stock === 0 ? true : false} onClick={onAdd}> 
+                                        <Button variant="contained" color="warning" id="addToCart"  disabled={stock === 0 || count === 0 ? true : false} onClick={onAdd}> 
                                             Adicionar ao Carrinho <AddShoppingCartSharpIcon  />
                                         </Button>
                                     </div>
-                                        <Typography >
-                                            <Cart className="ItemA" />
-                                         </Typography>
+
                                 </div>
 
                             </div>

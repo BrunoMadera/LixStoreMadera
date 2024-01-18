@@ -8,8 +8,8 @@ export function CartContextProvider({ children }) {
 
        const [cartAdded, setCartAdded] = useState([]);
         
-       function addToCart(item){
-        const itemsAdded = {...item};
+       function addToCart(item, count){
+        const itemsAdded = {...item, count: count};
 
         setCartAdded([...cartAdded, itemsAdded]);
         
