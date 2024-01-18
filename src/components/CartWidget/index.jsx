@@ -7,9 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import { CartContext } from "../../contexts/CartContext";
 import { useContext } from 'react';
-import { fontSize } from '@mui/system';
 
-    
 
     
 function CartWidget() {

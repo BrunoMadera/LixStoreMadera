@@ -71,7 +71,7 @@ function sumPrice (){
         </Offcanvas.Header>
         <Offcanvas.Body style={{backgroundColor:'white'}}>
         <p className="h11 titleCartItems" style={{textAlign:'end', background:"rgba(16, 52, 166, 0.5)"}} >
-        <MdRemoveShoppingCart onClick={cartContext.clearCart, handleClose} className="cartItemsRemove" />
+        <MdRemoveShoppingCart onClick={cartContext.clearCart && handleClose} className="cartItemsRemove" />
             Items no carrinho...</p>
             <hr className="hrPink" style={{marginTop:'75px'}}/>
               {cartItems()}      
