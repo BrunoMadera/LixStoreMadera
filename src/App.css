@@ -153,10 +153,6 @@ position:absolute;
   background-color: pink;
 }
 
-.addToCartIcon{
-
- 
-}
 
 .ContA{
 
@@ -182,8 +178,93 @@ position:absolute;
   
 }
 
-.checkoutButton{
+.totalCartCheckOut{
+
+    margin: auto 150px;
+}
+
+.checkOutBox{
+margin: 75px 0 15px 25px;
+background-color: white;
+text-decoration: underline;
+font-size:xx-large;
+}
 
 
+.checkOutContainer{
 
+margin-top: 25px;
+width: 100%;
+height: fit-content;
+background-color: white;
+
+display: flex;
+flex-flow: column wrap;
+justify-content: space-between;
+align-items: flex-start;
+align-content: center;
+}
+
+.checkOutItem{
+
+/* border: solid 1px green; */
+width: 80%;
+margin: auto 25px ;
+
+
+}
+
+
+.removeItem:hover{
+ color: #C454EB;
+}
+
+.containerCheckSum{
+  background: rgba(16, 52, 166, 0.2);  ;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start ;
+  align-items: flex-start;
+  align-content: center;
+}
+
+.submitOrder{
+
+margin: auto 10px ;
+border: none;
+background-color: rgba(255,255,255,0);
+color: green;
+
+}
+
+.submitOrder:hover{
+
+margin: auto 10px ;
+border: none;
+background-color: rgba(255,255,255,0.5);
+color: yellowgreen;
+
+}
+
+.swal-modal {
+  background-color: rgb(16, 52, 166);   
+  border: 3px solid white;
+}
+
+.swal-title {
+  margin: 0px;
+  font-size: 100px;
+  box-shadow: 0px 1px 1px rgba(255, 255, 255, .21);
+  margin-bottom: 28px;
+  color: whitesmoke;
+}
+
+.swal-text {
+  background-color: #C454EB;
+  padding: 17px;
+  border: 1px solid #F0E1A1;
+  display: block;
+  margin: 22px;
+  text-align: center;
+  color: white;
 }

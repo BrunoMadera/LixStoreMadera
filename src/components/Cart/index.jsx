@@ -7,6 +7,7 @@ import { CartContext } from "../../contexts/CartContext";
 import { useContext } from 'react';
 
 import { MdRemoveShoppingCart } from "react-icons/md";
+// import { CgRemoveR } from "react-icons/cg";
 import CartWidget from '../CartWidget';
 import { Link } from "react-router-dom";
 
@@ -28,10 +29,12 @@ function Cart() {
                     {carr.map((carr, index) => { 
                       return (
                         <div key={index} style={{backgroundColor:'white'}} className="h13" >
+                          {/* <CgRemoveR className="removeItem" onClick={removeItem}/> */}
                           <p style={{fontWeight:'bold'}}>{carr.name} 
                             <span style={{fontWeight:'normal'}} > x {(carr.count)}</span>
                             <span style={{fontWeight:'normal'}} > = R$ {parseFloat(carr.price * carr.count).toFixed(2)}</span>
                           </p>
+
                           <hr className="hrBrown" />
                         </div>
                       );
@@ -53,6 +56,12 @@ function sumPrice (){
         return parseFloat(sumPrice).toFixed(2);
       }
 
+// function removeItem(index){
+
+//   carr.splice({index},1);
+//   console.log(carr);
+//   return carr;
+// }
  
   const [show, setShow] = useState(false);
 
@@ -79,11 +88,17 @@ function sumPrice (){
             <p className="h11 sumTitle"> 
                 {cartContext.cartAdded.length === 0 ? 
                     <span>Carrinho Vazio.. <br/> Continue comprando :D </span> 
-                  : <span className="totalCart"> Total do Carrinho R$ {sumPrice()} </span>}
-            <Link to="/CheckOut"><Button variant="outlined" color="success" className="checkoutButton" endIcon={<ShoppingCartCheckoutIcon />} onClick={handleClose} > Ir para CheckOut </Button> </Link>
+                  : <span className="totalCart"> Total do Carrinho R$ {sumPrice()} </span>
+                }
+              <hr className="hrBrown" />  
             </p>
 
-
+            <p> {cartContext.cartAdded.length === 0 ? 
+                <Button variant="disabled" > </Button>  
+                : <Link to="/CheckOut"><Button variant="outlined" color="success" className="checkOutButton"endIcon={<ShoppingCartCheckoutIcon />} onClick={handleClose} > Ir para CheckOut </Button> </Link>
+                }
+            </p>
+            
            </Offcanvas.Body>
       </Offcanvas>
     </>
